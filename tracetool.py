@@ -38,7 +38,7 @@ class Tracer:
             line2 = str(line).replace('\\r','').replace('\\n','')
             #print(line2)
             to_append = []
-            start_parse = line2.split(" ")
+            start_parse = line.split(" ")
             for item in start_parse:
                 if item:
                     to_append.append(item)
@@ -93,3 +93,5 @@ def my_traceroute(url,*arg):
 
 if __name__=="__main__":
     thisone = Tracer("google.com")
+    for item in thisone.get_response():
+        print(item)
